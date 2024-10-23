@@ -1,0 +1,38 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.intro-section {
+    background: url('https://via.placeholder.com/1600x800') center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-section, .projects-section {
+    padding: 60px 0;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.project-card img {
+    height: 200px;
+    object-fit: cover;
+}

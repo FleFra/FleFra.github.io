@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Filth</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fleur Spannenberg</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">Projects</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Introduction Section -->
+    <header class="intro-section" style="background-image: url('images/the_filth.png'); height: 75vh;">
+        <div class="container">
+            <h1 class="display-4">The Filth</h1>
+            <p class="lead">A Three-Day Game Jam Project</p>
+        </div>
+    </header>
+
+    <!-- Game Details Section -->
+    <section id="about" class="container py-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>About The Filth</h2>
+                <p>"The Filth" is a unity game developed over the course of three days during a game jam. The game mostly focusses on aesthetics and simple, addicting gameplay. Clean your desktop by clearing icons while the virus "The Filth" slowly gets stronger.</p>
+                <h3>Controls</h3>
+                <ul>
+                    <li>Press ~ to pause the game</li>
+                    <li>Move your mouse to move</li>
+                    <li>Hold left mouse button to attack</li>
+                    <li>Right click to fire your special, right click again to activate it</li>
+                    <li>Press tab to show or hide controls</li>
+                </ul>
+                <p>All of the sprites in this game were self-made and inspired by Windows 95 and 98 icons. The sound design mostly consits of existing Windows sounds.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/the_filth_screenshot.png" alt="The Filth Screenshot" class="img-fluid rounded mb-4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Embedded Game Section -->
+    <section id="play" class="container py-5">
+        <h2 class="text-center mb-5">Play The Filth</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="ratio ratio-16x9">
+                    <!-- Embed the Unity WebGL game here -->
+                    <iframe src="https://play.unity.com/en/games/b90b0494-ef42-4095-bdf8-ac9bbe0ff9be/the-filth" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Fleur Spannenberg | The Filth</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
