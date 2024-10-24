@@ -21,8 +21,9 @@ body {
     text-align: center;
 }
 
-.skills-section, .projects-section {
-    padding: 60px 0;
+.about-section-bg {
+    background-color: #6a6a6a;
+    padding: 40px 0;
 }
 
 .footer {
