@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fleur Spannenberg Portfolio</title>
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
             <a class="navbar-brand" href="index.html">Fleur Spannenberg</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +31,7 @@
     </nav>
 
     <!-- Game Introduction Section -->
-    <header class="intro-section" style="background-image: url('images/Zomboolean.png'); height: 75vh;">
+    <header class="bg-primary text-white text-center d-flex align-items-center justify-content-center" style="background-image: url('images/Zomboolean.png'); height: 75vh;">
         <div class="container">
             <h1 class="display-4">Zomboolean</h1>
             <p class="lead">An exciting mobile zombie shooter</p>
@@ -42,42 +39,45 @@
     </header>
 
     <!-- Game Details Section -->
-    <section id="about" class="container py-5">
-        <div class="row">
-            <div class="col-md-8">
-                <h2>About Zomboolean</h2>
-                <p>"Zomboolean" is a mobile game developed in Unity. It's supposed to be a simple mobile game you can pick up and put down easily withour losing your progress. The game keeps track of many of the player's stats and the player can equip different weapons to suit their play style.</p>
-                <h3>Features:</h3>
-                <ul>
-                    <li>Expand your land!</li>
-                    <li>Buy new weapons!</li>
-                    <li>Upgrade your character!</li>
-                    <li>Become as rich as possible!</li>
-                </ul>
-                <p></p>
-            </div>
-            <div class="col-md-4">
-                <img src="images/Zomboolean.png" alt="Zomboolean icon" class="img-fluid rounded mb-4">
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="fw-bold">About Zomboolean</h2>
+                    <p>"Zomboolean" is a mobile game developed in Unity. It's supposed to be a simple mobile game you can pick up and put down easily without losing your progress. The game keeps track of many of the player's stats and the player can equip different weapons to suit their play style.</p>
+                    <h3>Features:</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Expand your land!</li>
+                        <li class="list-group-item">Buy new weapons!</li>
+                        <li class="list-group-item">Upgrade your character!</li>
+                        <li class="list-group-item">Become as rich as possible!</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/Zomboolean.png" alt="Zomboolean icon" class="img-fluid rounded shadow">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Embedded Game Section -->
-    <section id="play" class="container py-5">
-        <h2 class="text-center mb-5">Watch the Zomboolean trailer:</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="ratio ratio-16x9">
-                    <!-- Embed the Unity WebGL game here -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/crjATiYVeUg?si=1mlgEUYyOxL_TiS2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+    <section id="play" class="py-5 bg-secondary text-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Watch the Zomboolean trailer:</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="ratio ratio-16x9 shadow">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/crjATiYVeUg?si=1mlgEUYyOxL_TiS2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer py-4 bg-dark text-white text-center">
         <div class="container">
-            <p>&copy; Fleur Spannenberg | Zomboolean</p>
+            <p class="mb-0">&copy; Fleur Spannenberg | Zomboolean</p>
         </div>
     </footer>
 
