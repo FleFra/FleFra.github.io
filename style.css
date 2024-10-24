@@ -11,7 +11,7 @@ body {
 }
 
 .intro-section {
-    background: url('https://via.placeholder.com/1600x800') center center no-repeat;
+    background: url('images/banner.jpg') center center no-repeat;
     background-size: cover;
     height: 100vh;
     color: white;
