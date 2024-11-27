@@ -1,26 +1,25 @@
-/* General Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #eceff1;
-    color: #333;
+    background-color: #121212;
+    color: #e0e0e0;
     line-height: 1.6;
 }
 
-/* Navbar Styling */
 .navbar {
-    background-color: #212529;
+    background-color: #000000;
 }
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
     letter-spacing: 1px;
+    color: #ff4500 !important;
 }
 .nav-link {
-    color: #f8f9fa !important;
+    color: #e0e0e0 !important;
     transition: color 0.3s ease;
 }
 .nav-link:hover {
-    color: #17a2b8 !important;
+    color: #ff4500 !important;
 }
 
 .intro-section {
@@ -46,98 +45,113 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with transparency */
-    z-index: 1; /* Ensure overlay is above the image but below text */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
 .intro-section h1, .intro-section p, .intro-section .btn {
     position: relative;
-    z-index: 2; /* Ensure text and buttons are above the overlay */
+    z-index: 2;
 }
 
-
 .intro-section h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
+    text-transform: uppercase;
     margin-bottom: 15px;
+    color: #ff4500;
 }
 .intro-section p {
     font-size: 1.25rem;
     margin-bottom: 20px;
+    color: #e0e0e0;
 }
 
 .intro-section .btn {
-    background-color: #17a2b8;
+    background-color: #ff4500;
     border: none;
     padding: 10px 20px;
     font-size: 1.1rem;
+    color: #fff;
     transition: background-color 0.3s ease;
 }
+
 .intro-section .btn:hover {
-    background-color: #138496;
+    background-color: #cc3700;
 }
 
-/* About Section */
 .about-section-bg {
-    background-color: #37474f;
-    color: #eceff1;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
     padding: 40px 0;
 }
+
 .about-section-bg h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #ff4500;
 }
+
 .about-section-bg p {
     font-size: 1.1rem;
     margin-bottom: 20px;
+    color: #dcdcdc;
 }
 
-/* Project Section */
 .projects-section {
-    background-color: #ffffff;
+    background-color: #1e1e1e;
     padding: 60px 0;
 }
+
 .projects-section h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #212529;
+    color: #ff4500;
 }
+
 .project-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2c2c2c; 
+    border-radius: 8px;
 }
+
 .project-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4);
 }
+
 .project-card img {
     height: 220px;
     object-fit: cover;
-}
-.project-card .card-title {
-    color: #212529;
+    border-bottom: 4px solid #ff4500;
 }
 
-/* Footer */
+.project-card .card-title {
+    color: #e0e0e0;
+}
+
 .footer {
-    background-color: #212529;
-    color: #eceff1;
+    background-color: #000000;
+    color: #e0e0e0;
     padding: 30px 0;
     font-size: 0.9rem;
 }
+
 .footer p {
     margin: 0;
 }
+
 .footer a {
-    color: #17a2b8;
+    color: #ff4500;
     text-decoration: none;
     margin-right: 15px;
     transition: color 0.3s ease;
 }
+
 .footer a:hover {
-    color: #138496;
+    color: #cc3700;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .intro-section h1 {
         font-size: 2.5rem;
@@ -151,4 +165,71 @@ body {
     .about-section-bg img {
         margin: 20px auto;
     }
+}
+
+header {
+    position: relative;
+    background-image: url('images/banner.png');
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.project-card .card-text {
+    color: #dcdcdc;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+section#about {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+}
+
+.list-group-item {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    border: 1px solid #333; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #272727;
+}
+
+section#about {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+h2, h3 {
+    color: #ff4500;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
