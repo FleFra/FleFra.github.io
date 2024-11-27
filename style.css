@@ -1,39 +1,134 @@
+/* General Body Styling */
 body {
-    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    background-color: #eceff1;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* Navbar Styling */
 .navbar {
-    background-color: #343a40;
+    background-color: #212529;
 }
-
-.navbar-brand, .nav-link {
-    color: #ffffff !important;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+.nav-link {
+    color: #f8f9fa !important;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: #17a2b8 !important;
 }
 
 .intro-section {
-    background: url('images/banner.jpg') center center no-repeat;
-    background-size: cover;
+    background: url('images/banner.png') center center no-repeat;
+    background-size: auto;
+    background-repeat: repeat-x;
     height: 100vh;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 20px;
 }
 
+.intro-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.intro-section p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+.intro-section .btn {
+    background-color: #17a2b8;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+.intro-section .btn:hover {
+    background-color: #138496;
+}
+
+/* About Section */
 .about-section-bg {
-    background-color: #6a6a6a;
+    background-color: #37474f;
+    color: #eceff1;
     padding: 40px 0;
 }
-
-.footer {
-    background-color: #343a40;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+.about-section-bg h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.about-section-bg p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
+/* Project Section */
+.projects-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #212529;
+}
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 .project-card img {
-    height: 200px;
+    height: 220px;
     object-fit: cover;
+}
+.project-card .card-title {
+    color: #212529;
+}
+
+/* Footer */
+.footer {
+    background-color: #212529;
+    color: #eceff1;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+.footer p {
+    margin: 0;
+}
+.footer a {
+    color: #17a2b8;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #138496;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .intro-section h1 {
+        font-size: 2.5rem;
+    }
+    .intro-section p {
+        font-size: 1rem;
+    }
+    .about-section-bg {
+        text-align: center;
+    }
+    .about-section-bg img {
+        margin: 20px auto;
+    }
 }
