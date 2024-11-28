@@ -233,3 +233,16 @@ h2, h3 {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+.game-intro {
+    background-image: url('images/banner.png');
+    background-size: auto;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
