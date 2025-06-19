@@ -111,11 +111,13 @@ body {
 
 .project-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2c2c2c; 
     border-radius: 10px;
-    overflow: visible;
+    overflow: visible; 
     z-index: 1;
     position: relative;
-}
+    margin-bottom: 20px;
+}    
 
 .project-card:hover {
     transform: scale(1.05);
