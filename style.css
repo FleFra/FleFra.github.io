@@ -5,7 +5,7 @@
     --text-light: #f2f2f2;
     --text-light-alt: #dcdcdc;
     --accent: #ff2d2d;
-    --accent-secondary: #00c8ff;
+    --accent-secondary: #ff00a2;
     --card-bg: #1c1c1c;
     --glow: 0 0 15px var(--accent);
     --border-dark: #333;
@@ -220,16 +220,42 @@ h1, h2, h3, h4, h5, h6 {
 .racecar-hover {
     position: relative;
     display: inline-block;
-    overflow: hidden;
-    color: var(--accent);
-    transition: color 0.3s ease;
+    font-weight: bold;
+    background: linear-gradient(
+        120deg,
+        var(--accent),
+        var(--accent),
+        white,
+        var(--accent),
+        var(--accent)
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.4s ease-out;
+}
+
+.racecar-hover:hover {
+    background-position: 100% center;
+    animation: shineThroughText 1s ease-out;
+}
+
+@keyframes shineThroughText {
+    -0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 100% center;
+    }
 }
 
 .racecar-hover::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -75%;
+    left: -100%;
     width: 50%;
     height: 100%;
     background: linear-gradient(
@@ -245,13 +271,8 @@ h1, h2, h3, h4, h5, h6 {
     animation: scanline 0.75s ease-out;
 }
 
-@keyframes scanline {
-    0% {
-        left: -75%;
-    }
-    100% {
-        left: 125%;
-    }
+.racecar-hover.flash-active::before {
+  animation: scanline 0.75s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -307,3 +328,13 @@ header .container {
         box-shadow: inset 0 0 100px rgba(255, 45, 45, 0.4);
     }
 }
+
+@keyframes scanline {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+

@@ -171,11 +171,20 @@
                 { threshold: 0.1 }
             );
 
-            document.querySelectorAll('.project-card-inner').forEach((cardInner) => {
-                cardInner.classList.add('before-animate');
-                observer.observe(cardInner);
+        document.querySelectorAll('.project-card-inner').forEach((cardInner) => {
+            cardInner.classList.add('before-animate');
+            observer.observe(cardInner);
+        });
+    });
+        document.querySelectorAll('.racecar-hover').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.classList.add('flash-active');
+                setTimeout(() => {
+                    el.classList.remove('flash-active');
+                }, 800);
             });
         });
+
     </script>
 </body>
 </html>
