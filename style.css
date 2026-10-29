@@ -792,3 +792,203 @@ h1, h2, h3, h4, h5, h6 {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Shared project detail page layout */
+.project-page {
+    background: var(--bg-dark);
+}
+
+.project-page .project-hero {
+    position: relative;
+    height: auto !important;
+    min-height: min(680px, calc(100svh - 72px));
+    padding: clamp(100px, 16vh, 170px) 20px;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center !important;
+    box-shadow: none;
+}
+
+.project-page .project-hero::before {
+    z-index: 1;
+    background:
+        linear-gradient(0deg, var(--bg-dark) 0%, rgba(16, 17, 17, 0.1) 40%, rgba(10, 10, 10, 0.48) 100%),
+        linear-gradient(90deg, rgba(10, 11, 11, 0.78), rgba(10, 11, 11, 0.18));
+}
+
+.project-page .project-hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1140px;
+}
+
+.project-page .project-hero h1 {
+    margin-bottom: 14px;
+    color: var(--text-light);
+    font-size: clamp(2.75rem, 7vw, 5.6rem);
+    line-height: 1.08;
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.72);
+}
+
+.project-page .project-hero .lead {
+    max-width: 680px;
+    margin: 0 auto;
+    color: rgba(243, 240, 233, 0.88);
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+.project-page > section {
+    position: relative;
+    padding-top: clamp(54px, 7vw, 86px) !important;
+    padding-bottom: clamp(54px, 7vw, 86px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+    background: #111313;
+}
+
+.project-page > section:nth-of-type(even) {
+    background:
+        linear-gradient(135deg, rgba(255, 22, 142, 0.025), transparent 55%),
+        #151717;
+}
+
+.project-page > section.container {
+    width: 100%;
+    max-width: none;
+    padding-right: max(24px, calc((100% - 1140px) / 2)) !important;
+    padding-left: max(24px, calc((100% - 1140px) / 2)) !important;
+}
+
+.project-page > section > .container {
+    max-width: 1140px;
+}
+
+.project-page section h2 {
+    margin-bottom: 22px;
+    color: var(--text-light);
+    font-size: clamp(1.8rem, 3.5vw, 2.45rem);
+}
+
+.project-page section h3 {
+    margin-top: 30px;
+    margin-bottom: 14px;
+    color: var(--accent-secondary);
+    font-size: 1.15rem;
+    letter-spacing: 0.015em;
+}
+
+.project-page section p,
+.project-page section li {
+    color: var(--text-light-alt);
+    font-size: 0.96rem;
+    line-height: 1.85;
+}
+
+.project-page section p {
+    max-width: 780px;
+}
+
+.project-page section li {
+    padding-left: 4px;
+    margin-bottom: 7px;
+}
+
+.project-page section li::marker {
+    color: var(--accent);
+}
+
+.project-page section ul {
+    padding-left: 1.25rem;
+}
+
+.project-page section img,
+.project-page section video,
+.project-page section iframe {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 3px !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.project-page section img {
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.project-page section figure img {
+    max-height: 500px;
+    object-fit: contain;
+    background: #171919;
+}
+
+.project-page section figcaption {
+    color: #aaa9a3 !important;
+    font-size: 0.76rem;
+    letter-spacing: 0.035em;
+}
+
+.project-page section a:not(.nav-link) {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 22, 142, 0.65);
+    border-radius: 2px;
+    color: var(--text-light);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.project-page section a:not(.nav-link):hover {
+    border-color: var(--accent-secondary);
+    background: var(--accent-secondary);
+    color: #111;
+}
+
+.project-page #play .ratio {
+    overflow: hidden;
+    border: 1px solid rgba(255, 22, 142, 0.25);
+    border-radius: 3px;
+    background: #080909;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.42);
+}
+
+.project-page #play iframe {
+    border: 0;
+    border-radius: 0 !important;
+    box-shadow: none;
+}
+
+.project-page #trailer video {
+    display: block;
+    max-height: 620px !important;
+    background: #080909;
+}
+
+.project-page > .footer {
+    padding: 30px 0 !important;
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .project-page .project-hero {
+        min-height: min(580px, calc(100svh - 64px));
+        padding: 90px 20px;
+    }
+
+    .project-page .project-hero h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .project-page > section.container {
+        padding-right: 22px !important;
+        padding-left: 22px !important;
+    }
+
+    .project-page section img {
+        max-height: 340px;
+    }
+}
