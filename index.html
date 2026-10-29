@@ -18,7 +18,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Fleur Spannenberg</a>
+            <a class="navbar-brand" href="#" aria-label="Fleur Spannenberg home">
+                <span class="brand-mark">FS</span>
+                <span>Fleur Spannenberg</span>
+            </a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -46,9 +49,11 @@
     <!-- Introduction Section -->
     <header class="intro-section">
         <div class="container">
+            <p class="hero-kicker"><span></span> Software developer · car enthusiast</p>
             <h1 class="display-4 racecar-hover">Fleur Spannenberg</h1>
             <p class="lead">Software developer</p>
             <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+            <p class="hero-footnote">Games, code &amp; everything in between</p>
         </div>
     </header>
 
@@ -57,6 +62,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
+                    <p class="section-kicker">Behind the wheel</p>
                     <h2>About Me</h2>
                     <p>
                         Hi, I’m Fleur — a 22-year-old software development student with a passion for cars, video games, and art. 
@@ -65,7 +71,10 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="images/profiel_celica.jpg" alt="Profile Image" class="img-fluid rounded float-end" style="width: 800px;" />
+                    <div class="about-image-wrap">
+                        <img src="images/profiel_celica.jpg" alt="Fleur with her Toyota Celica" class="img-fluid rounded" />
+                        <span class="image-caption">’00 Toyota Celica · work in progress</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,7 +83,8 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Projects</h2>
+            <p class="section-kicker text-center">Built with curiosity</p>
+            <h2 class="text-center mb-5">Selected projects</h2>
             <div class="row">
                 <!-- The Filth -->
                 <div class="col-md-4">
@@ -95,7 +105,7 @@
                     <a href="Zomboolean.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/Zomboolean.png" class="card-img-top" alt="Project 2" />
+                                <img src="images/Zomboolean.png" class="card-img-top" alt="Zombolean gameplay" />
                                 <div class="card-body">
                                     <h5 class="card-title">Zombolean</h5>
                                     <p class="card-text">A mobile shooter game made in Unity.</p>
