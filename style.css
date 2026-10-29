@@ -1136,6 +1136,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
 }
 
+.projects-section .category-grid > div > .category-card {
+    display: flex;
+    height: 100%;
+}
+
 .category-card::after {
     position: absolute;
     top: 0;
