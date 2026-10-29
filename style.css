@@ -251,30 +251,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.racecar-hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100vw;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.6) 50%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
-    transform: skewX(-20deg);
-}
-
-.racecar-hover:hover::before {
-    animation: scanline 0.75s ease-out;
-}
-
-.racecar-hover.flash-active::before {
-  animation: scanline 0.75s ease-out;
-}
-
 @media (max-width: 768px) {
     .intro-section h1 {
         font-size: 2.5rem;
@@ -326,15 +302,6 @@ header .container {
     }
     50% {
         box-shadow: inset 0 0 100px rgba(255, 45, 45, 0.4);
-    }
-}
-
-@keyframes scanline {
-    0% {
-        left: -75%;
-    }
-    100% {
-        left: 150%;
     }
 }
 
@@ -478,6 +445,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .racecar-hover {
+    overflow: hidden;
+    isolation: isolate;
     background-image: linear-gradient(
         120deg,
         var(--accent),
@@ -498,26 +467,24 @@ h1, h2, h3, h4, h5, h6 {
     animation: shineThroughText 1s ease-out;
 }
 
-.racecar-hover::before {
-    content: '';
+.name-flash {
     position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
+    top: -8%;
+    left: 0;
+    z-index: 1;
+    width: 140px;
+    height: 116%;
     background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.05),
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.05)
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18) 30%,
+        rgba(255, 255, 255, 0.8) 52%,
+        rgba(255, 22, 142, 0.28) 68%,
+        transparent
     );
     pointer-events: none;
+    user-select: none;
     transform: skewX(-20deg);
-}
-
-.racecar-hover:hover::before,
-.racecar-hover.flash-active::before {
-    animation: scanline 0.75s ease-out;
 }
 
 .intro-section p.lead {

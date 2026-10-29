@@ -214,12 +214,52 @@
                 observer.observe(cardInner);
             });
 
+            const activeFlashes = new WeakMap();
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
             document.querySelectorAll('.racecar-hover').forEach((el) => {
                 el.addEventListener('mouseenter', () => {
-                    el.classList.add('flash-active');
-                    setTimeout(() => {
-                        el.classList.remove('flash-active');
-                    }, 800);
+                    if (reducedMotion.matches) {
+                        return;
+                    }
+
+                    const activeAnimation = activeFlashes.get(el);
+                    if (activeAnimation) {
+                        activeAnimation.cancel();
+                    }
+
+                    const flash = document.createElement('span');
+                    flash.className = 'name-flash';
+                    flash.setAttribute('aria-hidden', 'true');
+                    el.append(flash);
+
+                    const bounds = el.getBoundingClientRect();
+                    const flashWidth = flash.getBoundingClientRect().width;
+                    const startX = -bounds.left - flashWidth - 16;
+                    const endX = window.innerWidth - bounds.left + 16;
+                    const animation = flash.animate(
+                        [
+                            { transform: `translateX(${startX}px) skewX(-20deg)`, opacity: 0, offset: 0 },
+                            { transform: `translateX(${startX}px) skewX(-20deg)`, opacity: 0.9, offset: 0.12 },
+                            { transform: `translateX(${endX}px) skewX(-20deg)`, opacity: 0.9, offset: 0.82 },
+                            { transform: `translateX(${endX}px) skewX(-20deg)`, opacity: 0, offset: 1 }
+                        ],
+                        {
+                            duration: 950,
+                            easing: 'linear'
+                        }
+                    );
+
+                    const cleanup = () => {
+                        flash.remove();
+                        if (activeFlashes.get(el) === animation) {
+                            activeFlashes.delete(el);
+                        }
+                    };
+
+                    animation.onfinish = cleanup;
+                    animation.oncancel = cleanup;
+                    activeFlashes.set(el, animation);
                 });
             });
 
