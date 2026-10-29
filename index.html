@@ -218,34 +218,35 @@
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
             document.querySelectorAll('.racecar-hover').forEach((el) => {
-                el.addEventListener('mouseenter', () => {
+                const playNameFlash = () => {
                     if (reducedMotion.matches) {
                         return;
                     }
 
-                    const activeAnimation = activeFlashes.get(el);
-                    if (activeAnimation) {
-                        activeAnimation.cancel();
+                    if (activeFlashes.has(el)) {
+                        return;
                     }
 
                     const flash = document.createElement('span');
                     flash.className = 'name-flash';
                     flash.setAttribute('aria-hidden', 'true');
-                    el.append(flash);
 
                     const bounds = el.getBoundingClientRect();
+                    flash.style.setProperty('--flash-top', `${bounds.top - 8}px`);
+                    flash.style.setProperty('--flash-height', `${bounds.height + 16}px`);
+                    flash.style.opacity = '0';
+                    document.body.append(flash);
+
                     const flashWidth = flash.getBoundingClientRect().width;
-                    const startX = -bounds.left - flashWidth - 16;
-                    const endX = window.innerWidth - bounds.left + 16;
+                    const startX = -flashWidth;
+                    const endX = document.documentElement.clientWidth + flashWidth;
                     const animation = flash.animate(
                         [
-                            { transform: `translateX(${startX}px) skewX(-20deg)`, opacity: 0, offset: 0 },
-                            { transform: `translateX(${startX}px) skewX(-20deg)`, opacity: 0.9, offset: 0.12 },
-                            { transform: `translateX(${endX}px) skewX(-20deg)`, opacity: 0.9, offset: 0.82 },
-                            { transform: `translateX(${endX}px) skewX(-20deg)`, opacity: 0, offset: 1 }
+                            { transform: `translateX(${startX}px) skewX(-20deg)`, opacity: 0.9 },
+                            { transform: `translateX(${endX}px) skewX(-20deg)`, opacity: 0.9 }
                         ],
                         {
-                            duration: 950,
+                            duration: 720,
                             easing: 'linear'
                         }
                     );
@@ -260,7 +261,10 @@
                     animation.onfinish = cleanup;
                     animation.oncancel = cleanup;
                     activeFlashes.set(el, animation);
-                });
+                };
+
+                el.addEventListener('mouseenter', playNameFlash);
+                el.addEventListener('focus', playNameFlash);
             });
 
             const hero = document.querySelector('.intro-section');
