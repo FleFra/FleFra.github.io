@@ -429,6 +429,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro-section::before {
     background:
+        radial-gradient(
+            circle 280px at var(--light-x, 50%) var(--light-y, 45%),
+            rgba(255, 255, 255, 0.075),
+            transparent 75%
+        ),
         linear-gradient(0deg, var(--bg-dark) 0%, rgba(16, 17, 17, 0.12) 34%, rgba(10, 10, 10, 0.35) 100%),
         linear-gradient(90deg, rgba(10, 11, 11, 0.78), rgba(10, 11, 11, 0.12) 85%);
 }
@@ -473,13 +478,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .racecar-hover {
-    background: none;
-    color: var(--text-light);
-    -webkit-text-fill-color: currentColor;
-    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
-}
-
-.racecar-hover:hover {
     background-image: linear-gradient(
         120deg,
         var(--accent),
@@ -488,10 +486,15 @@ h1, h2, h3, h4, h5, h6 {
         var(--accent)
     );
     background-size: 200% auto;
+    background-position: 0 center;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+}
+
+.racecar-hover:hover {
     animation: shineThroughText 1s ease-out;
 }
 
