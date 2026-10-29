@@ -992,3 +992,118 @@ h1, h2, h3, h4, h5, h6 {
         max-height: 340px;
     }
 }
+
+.garage-intro {
+    margin: -4px 0 25px;
+    color: #aaa9a3;
+    font-size: 0.9rem;
+}
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 13px;
+}
+
+.project-filter {
+    padding: 8px 14px;
+    border: 1px solid #393a37;
+    border-radius: 2px;
+    background: #171919;
+    color: #c3c0b8;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.project-filter:hover,
+.project-filter.is-active {
+    border-color: var(--accent);
+    background: rgba(239, 73, 57, 0.12);
+    color: var(--text-light);
+}
+
+.project-filter:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 3px;
+}
+
+.project-count {
+    min-height: 1.4em;
+    margin: 0 0 20px;
+    color: #777a77;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.09em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.projects-section .project-bay[hidden] {
+    display: none !important;
+}
+
+.project-card-image {
+    position: relative;
+    overflow: hidden;
+    background: #0c0d0d;
+}
+
+.project-card-image::after {
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(transparent, rgba(10, 11, 11, 0.68));
+    content: "";
+    pointer-events: none;
+}
+
+.project-card .bay-number {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 1;
+    color: rgba(243, 240, 233, 0.88);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.61rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-card .bay-number span {
+    padding: 0 4px;
+    color: var(--accent-secondary);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.project-tags span {
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 22, 142, 0.24);
+    background: rgba(255, 22, 142, 0.045);
+    color: #c8c2c4;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.035em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767.98px) {
+    .project-filters {
+        gap: 6px;
+    }
+
+    .project-filter {
+        padding: 8px 10px;
+        font-size: 0.58rem;
+    }
+}

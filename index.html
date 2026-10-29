@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
     <!-- Navbar -->
@@ -84,88 +84,120 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section py-5">
         <div class="container">
-            <p class="section-kicker text-center">Built with curiosity</p>
-            <h2 class="text-center mb-5">Selected projects</h2>
+            <p class="section-kicker text-center">Project pit board · current roster</p>
+            <h2 class="text-center mb-3">The project garage</h2>
+            <p class="garage-intro text-center">Pick a bay and take a closer look at what went into each build.</p>
+            <div class="project-filters" role="group" aria-label="Filter projects">
+                <button class="project-filter is-active" type="button" data-project-filter="all" aria-pressed="true">All builds</button>
+                <button class="project-filter" type="button" data-project-filter="solo" aria-pressed="false">Solo</button>
+                <button class="project-filter" type="button" data-project-filter="team" aria-pressed="false">Team</button>
+                <button class="project-filter" type="button" data-project-filter="gamejam" aria-pressed="false">Game jam</button>
+            </div>
+            <p class="project-count" id="project-count" aria-live="polite">6 projects in the garage</p>
             <div class="row">
                 <!-- The Filth -->
-                <div class="col-md-4">
+                <div class="col-md-4 project-bay" data-project-type="team gamejam">
                     <a href="the_filth.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/the_filth.png" class="card-img-top" alt="The Filth" />
+                                <div class="project-card-image">
+                                    <img src="images/the_filth.png" class="card-img-top" alt="The Filth" />
+                                    <span class="bay-number">Bay 01 <span>·</span> Game jam</span>
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">The Filth</h5>
                                     <p class="card-text">A three day game-jam project.</p>
+                                    <div class="project-tags"><span>Art &amp; gameplay</span><span>Unity</span></div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Zomboolean -->
-                <div class="col-md-4">
+                <div class="col-md-4 project-bay" data-project-type="team">
                     <a href="Zomboolean.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/Zomboolean.png" class="card-img-top" alt="Zombolean gameplay" />
+                                <div class="project-card-image">
+                                    <img src="images/Zomboolean.png" class="card-img-top" alt="Zombolean gameplay" />
+                                    <span class="bay-number">Bay 02 <span>·</span> Team build</span>
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Zombolean</h5>
                                     <p class="card-text">A mobile shooter game made in Unity.</p>
+                                    <div class="project-tags"><span>Scrum &amp; 3D</span><span>Save system</span></div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Foul Fiasco -->
-                <div class="col-md-4">
+                <div class="col-md-4 project-bay" data-project-type="team">
                     <a href="foul_fiasco.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/foul_fiasco.png" class="card-img-top" alt="Foul Fiasco" />
+                                <div class="project-card-image">
+                                    <img src="images/foul_fiasco.png" class="card-img-top" alt="Foul Fiasco" />
+                                    <span class="bay-number">Bay 03 <span>·</span> Team build</span>
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Foul Fiasco</h5>
                                     <p class="card-text">A 2D arcade game.</p>
+                                    <div class="project-tags"><span>Pixel art</span><span>Map generation</span></div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                  <!-- Geiger//Counter -->
-                <div class="col-md-4">
+                <div class="col-md-4 project-bay" data-project-type="team">
                     <a href="geiger_counter.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/geiger_counter.png" class="card-img-top" alt="Geiger//Counter" />
+                                <div class="project-card-image">
+                                    <img src="images/geiger_counter.png" class="card-img-top" alt="Geiger//Counter" />
+                                    <span class="bay-number">Bay 04 <span>·</span> Team build</span>
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Geiger//Counter</h5>
                                     <p class="card-text">A post-apocalyptic roguelike cardgame</p>
+                                    <div class="project-tags"><span>Scrum master</span><span>Pixel art</span></div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- De Ramp met de Phoenix-->
-                <div class="col-md-4">
+                <div class="col-md-4 project-bay" data-project-type="team">
                     <a href="ramp.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/ramp.png" class="card-img-top" alt="De Ramp met de Phoenix" />
+                                <div class="project-card-image">
+                                    <img src="images/ramp.png" class="card-img-top" alt="De Ramp met de Phoenix" />
+                                    <span class="bay-number">Bay 05 <span>·</span> Team build</span>
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">De Ramp met de Phoenix</h5>
                                     <p class="card-text">Digitized Dutch card game</p>
+                                    <div class="project-tags"><span>Scrum master</span><span>Game systems</span></div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- BODYRUNNERS -->
-                <div class="col-md-4">
+                <div class="col-md-4 project-bay" data-project-type="solo">
                     <a href="bodyrunners.html" class="text-decoration-none">
                         <div class="card project-card">
                             <div class="project-card-inner">
-                                <img src="images/bodyrunners.jpg" class="card-img-top" alt="BODYRUNNERS" />
+                                <div class="project-card-image">
+                                    <img src="images/bodyrunners.jpg" class="card-img-top" alt="BODYRUNNERS" />
+                                    <span class="bay-number">Bay 06 <span>·</span> Solo build</span>
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">BODYRUNNERS</h5>
                                     <p class="card-text">Solo Passion Project</p>
+                                    <div class="project-tags"><span>Reusable systems</span><span>Gameplay</span></div>
                                 </div>
                             </div>
                         </div>
@@ -213,6 +245,32 @@
             document.querySelectorAll('.project-card-inner').forEach((cardInner) => {
                 cardInner.classList.add('before-animate');
                 observer.observe(cardInner);
+            });
+
+            const projectFilters = document.querySelectorAll('.project-filter');
+            const projectBays = document.querySelectorAll('.project-bay');
+            const projectCount = document.querySelector('#project-count');
+
+            projectFilters.forEach((filter) => {
+                filter.addEventListener('click', () => {
+                    const selectedType = filter.dataset.projectFilter;
+                    let visibleProjects = 0;
+
+                    projectFilters.forEach((button) => {
+                        const isSelected = button === filter;
+                        button.classList.toggle('is-active', isSelected);
+                        button.setAttribute('aria-pressed', String(isSelected));
+                    });
+
+                    projectBays.forEach((bay) => {
+                        const types = bay.dataset.projectType.split(' ');
+                        const shouldShow = selectedType === 'all' || types.includes(selectedType);
+                        bay.hidden = !shouldShow;
+                        visibleProjects += Number(shouldShow);
+                    });
+
+                    projectCount.textContent = `${visibleProjects} ${visibleProjects === 1 ? 'project' : 'projects'} in the garage`;
+                });
             });
 
             const activeFlashes = new WeakMap();
