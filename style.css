@@ -344,7 +344,7 @@ header .container {
     --text-light: #f3f0e9;
     --text-light-alt: #c3c0b8;
     --accent: #ef4939;
-    --accent-secondary: #f1a94e;
+    --accent-secondary: #ff168e;
     --card-bg: #1b1d1d;
     --border-dark: #393a37;
     --footer-bg: #0c0d0d;
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 72px;
     padding: 10px 0;
     background: rgba(13, 14, 14, 0.94);
-    border-bottom: 1px solid rgba(241, 169, 78, 0.35);
+    border-bottom: 1px solid rgba(255, 22, 142, 0.35);
     backdrop-filter: blur(14px);
 }
 
@@ -479,8 +479,42 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
 }
 
+.racecar-hover:hover {
+    background-image: linear-gradient(
+        120deg,
+        var(--accent),
+        var(--accent),
+        var(--accent-secondary),
+        var(--accent)
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shineThroughText 1s ease-out;
+}
+
 .racecar-hover::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.05)
+    );
+    pointer-events: none;
+    transform: skewX(-20deg);
+}
+
+.racecar-hover:hover::before,
+.racecar-hover.flash-active::before {
+    animation: scanline 0.75s ease-out;
 }
 
 .intro-section p.lead {
@@ -526,7 +560,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
     border-radius: 0;
     background:
-        linear-gradient(135deg, rgba(241, 169, 78, 0.035), transparent 42%),
+        linear-gradient(135deg, rgba(255, 22, 142, 0.035), transparent 42%),
         var(--about-bg);
     box-shadow: none;
 }
@@ -562,7 +596,7 @@ h1, h2, h3, h4, h5, h6 {
 .about-image-wrap::before {
     position: absolute;
     inset: 0 12px 12px 0;
-    border: 1px solid rgba(241, 169, 78, 0.55);
+    border: 1px solid rgba(255, 22, 142, 0.55);
     content: "";
 }
 
@@ -593,7 +627,7 @@ h1, h2, h3, h4, h5, h6 {
 .projects-section {
     padding: clamp(70px, 9vw, 112px) 0 !important;
     background:
-        radial-gradient(ellipse at 50% 0, rgba(241, 169, 78, 0.055), transparent 48%),
+        radial-gradient(ellipse at 50% 0, rgba(255, 22, 142, 0.055), transparent 48%),
         var(--projects-bg);
 }
 
@@ -632,7 +666,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-card:hover {
     z-index: 2;
     transform: translateY(-6px);
-    border-color: rgba(241, 169, 78, 0.75);
+    border-color: rgba(255, 22, 142, 0.75);
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32);
 }
 
@@ -686,7 +720,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
     padding: 27px 0 !important;
-    border-top: 1px solid rgba(241, 169, 78, 0.35);
+    border-top: 1px solid rgba(255, 22, 142, 0.35);
     background: var(--footer-bg);
 }
 
