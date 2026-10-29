@@ -23,6 +23,112 @@ body {
     line-height: 1.6;
 }
 
+@media (min-width: 768px) {
+    html.has-scroll-road {
+        scrollbar-width: none;
+    }
+
+    html.has-scroll-road::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .scroll-road {
+        display: none;
+    }
+}
+
+.scroll-road {
+    position: fixed;
+    z-index: 1040;
+    top: 50%;
+    right: 7px;
+    width: 34px;
+    height: clamp(150px, 30vh, 250px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(8px, -50%, 0);
+    transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.scroll-road.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(0, -50%, 0);
+}
+
+.scroll-road__track {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 13px,
+            rgba(255, 255, 255, 0.72) 13px,
+            rgba(255, 255, 255, 0.72) 19px,
+            transparent 19px,
+            transparent 31px
+        ) center / 2px 31px repeat-y,
+        linear-gradient(90deg, #222 0%, #343434 50%, #222 100%);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), inset 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-road__car {
+    position: absolute;
+    left: 50%;
+    display: grid;
+    width: 32px;
+    height: 42px;
+    padding: 3px;
+    place-items: center;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    cursor: grab;
+    touch-action: none;
+    transform: translate(-50%, -50%);
+}
+
+.scroll-road__car:active {
+    cursor: grabbing;
+}
+
+.scroll-road__car:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.scroll-road__car svg {
+    display: block;
+    width: 22px;
+    height: 33px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.scroll-road__wheel {
+    fill: #111;
+}
+
+.scroll-road__body {
+    fill: #ff526d;
+    stroke: #ffd7df;
+    stroke-width: 0.7;
+}
+
+.scroll-road__window {
+    fill: #272d36;
+    stroke: #ffb1c0;
+    stroke-width: 0.6;
+}
+
+.scroll-road__light {
+    fill: #fff3cc;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
     color: var(--accent);
@@ -664,9 +770,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card:hover {
     z-index: 2;
-    transform: translateY(-6px);
-    border-color: rgba(255, 22, 142, 0.75);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32);
+    transform: translateY(-4px);
+    border-color: #454847;
+    box-shadow:
+        inset 0 -2px 0 rgba(255, 22, 142, 0.85),
+        0 12px 26px rgba(0, 0, 0, 0.28);
 }
 
 .project-card-inner {
@@ -1114,6 +1222,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .category-page .category-projects .project-card {
     height: 100%;
+}
+
+.project-page .category-projects .row > div > a {
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: normal;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.project-page .category-projects .row > div > a:hover {
+    border-color: transparent;
+    background: transparent;
+    color: inherit;
 }
 
 .category-page .category-projects .project-card-image img {
