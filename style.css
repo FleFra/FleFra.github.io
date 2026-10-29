@@ -396,13 +396,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro-section::before {
     background:
-        radial-gradient(
-            circle 280px at var(--light-x, 50%) var(--light-y, 45%),
-            rgba(255, 255, 255, 0.075),
-            transparent 75%
-        ),
         linear-gradient(0deg, var(--bg-dark) 0%, rgba(16, 17, 17, 0.12) 34%, rgba(10, 10, 10, 0.35) 100%),
         linear-gradient(90deg, rgba(10, 11, 11, 0.78), rgba(10, 11, 11, 0.12) 85%);
+}
+
+.hero-spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.075), transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 100ms linear;
+    will-change: transform, opacity;
+}
+
+.hero-spotlight.is-active {
+    opacity: 1;
 }
 
 .intro-section .container {
